@@ -1,5 +1,20 @@
 const form=document.querySelector('.add-form');
 const liste=document.querySelector('.todos');
+const aramaInput=document.querySelector('.search input');
+ 
+aramaInput.addEventListener('keyup',e=>{
+    const ifade=aramaInput.value.trim().toLowerCase();//toLowerCase() metodu, stringi küçük harfe çevirir
+    //console.log(ifade);
+    filtreOlustur(ifade);
+    });
+const filtreOlustur=(ifade)=>{
+   // console.log(Array.from(liste.children));
+   Array.from(liste.children).filter((yapilacak)=>{
+    return !yapilacak.textContent.toLowerCase().includes(ifade);
+ })
+}
+
+
 function temlateOlustur(yapilacak){
     let html=`
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -11,7 +26,7 @@ function temlateOlustur(yapilacak){
 }
 form.addEventListener('submit',e=>{
     e.preventDefault();
-    const yapilacak=form.add.value.trim();//trim() boşlukları temizler
+    const yapilacak=form.add.value.trim().toLowerCase;//trim() boşlukları temizler
     //console.log(yapilacak);
     if(yapilacak.length){
         
