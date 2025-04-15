@@ -11,7 +11,9 @@ const filtreOlustur=(ifade)=>{
    // console.log(Array.from(liste.children));
    Array.from(liste.children).filter((yapilacak)=>{
     return !yapilacak.textContent.toLowerCase().includes(ifade);
- })
+ }).forEach((yapilacak)=>{
+    yapilacak.classList.add('filtered');
+ });
 }
 
 

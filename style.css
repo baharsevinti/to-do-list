@@ -25,4 +25,5 @@ input[type="text"].input[type="text"]:focus{
    border-radius:5px;
    cursor:pointer;
 }
-
+.filtered{
+   display:none !important; }
