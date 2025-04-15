@@ -14,11 +14,19 @@ form.addEventListener('submit',e=>{
     const yapilacak=form.add.value.trim();//trim() boşlukları temizler
     //console.log(yapilacak);
     if(yapilacak.length){
-        form.reset();
+        
         temlateOlustur(yapilacak);
+        form.reset();
     }
 
 
 
    
-})
+});
+liste.addEventListener('click',e=>{
+
+    if(e.target.classList.contains('delete')){
+        //contains() metodu, classList içinde delete var mı yok mu kontrol eder
+        e.target.parentElement.remove();
+    }
+});
